@@ -34,7 +34,7 @@
 
                 </div>
             </div>
-            <div ng-show="event" ng-controller="EventController" ng-init="init(@ViewContext.RouteData.Values["id"])"  style="padding-left:20px; padding-right:20px">
+            <div ng-show="event" ng-controller="EventController" @*ng-init="init(@ViewContext.RouteData.Values["id"])"*@  style="padding-left:20px; padding-right:20px">
 
                 <div id="me">
                     <img data-ng-src="{{event.ImageUrl}}" alt="{{event.Name}}" />
@@ -66,8 +66,8 @@
                     <h3>Sessions</h3>
                     Order By:
                     <select ng-model="sortorder" class="input-small">
-                        <option selected value="name">Name</option>
-                        <option value="-upVoteCount">Votes</option>
+                        <option selected value="Name">Name</option>
+                        <option value="-UpVoteCount">Votes</option>
                     </select>
                     Show:
                     <select ng-model="query.Level" class="input-medium">

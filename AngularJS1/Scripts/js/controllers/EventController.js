@@ -43,11 +43,13 @@
 
 eventsApp.controller('EventController',
     function EventController($scope, eventData) {
-        var x = 0;
-        $scope.init = function (id) {
-            x = id;
-            console.log("the id",x);
-        }
+        // the function that will be called in the binding of the controller
+        // made this in order to pass data in the factory- randel usage => eventData.getEvent(id)
+        //var x = 0;
+        //$scope.init = function (id) {
+        //    x = id;
+        //    console.log("the id",x);
+        //}
         $scope.sortorder = 'name';
 
         // $scope.event returns a promise but angular knows how to bind data through that promise object, note that $scope.event does not return the actual event object
@@ -68,7 +70,6 @@ eventsApp.controller('EventController',
         //};
 
         $scope.upVoteSession = function (session) {
-            console.log("session",session);
             session.UpVoteCount++;
         };
 

@@ -61,7 +61,6 @@ eventsApp.factory('eventData', function ($resource, $q) {
             var deferred = $q.defer();
             resource.get({id:'1'},
                 function (event) {
-                    console.log("ngResource");
                     deferred.resolve(event);
                 },
                 function (response) {
