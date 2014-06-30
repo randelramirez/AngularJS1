@@ -183,6 +183,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CacheController.cs" />
     <Compile Include="Controllers\CompileController.cs" />
+    <Compile Include="Controllers\CookieStoreController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\EventRestfulController.cs" />
     <Compile Include="Controllers\EventDetailsController.cs" />
@@ -222,6 +223,7 @@
     <Content Include="Scripts\js\app.js" />
     <Content Include="Scripts\js\controllers\CacheSampleController.js" />
     <Content Include="Scripts\js\controllers\CompileSampleController.js" />
+    <Content Include="Scripts\js\controllers\CookieStoreSampleController.js" />
     <Content Include="Scripts\js\controllers\EditEventController.js" />
     <Content Include="Scripts\js\controllers\EditProfileController.js" />
     <Content Include="Scripts\js\controllers\EventController.js" />
@@ -290,6 +292,7 @@
     <Content Include="Views\Cache\Index.cshtml" />
     <Content Include="Views\Compile\Index.cshtml" />
     <Content Include="Views\FilterSample\Index.cshtml" />
+    <Content Include="Views\CookieStore\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Product\" />
