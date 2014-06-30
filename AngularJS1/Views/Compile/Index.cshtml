@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en" ng-app="eventsApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Compile Sample</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/app.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>Index</h2>
+    <div class="container" ng-controller="CompileSampleController">
+        <div id="appendHere"></div>
+        <br />
+        name: <input type="text" ng-model="name" />
+        markup: <input type="text" ng-model="markup" /><br />
+        <button class="btn" ng-click="appendDivToElement(markup)">Append</button>
+    </div>
+    <script src="~/Scripts/lib/jquery.min.js"></script>
+    <script src="~/Scripts/lib/angular/angular.js"></script>
+    <script src="~/Scripts/lib/angular/angular-resource.js"></script>
+    <script src="~/Scripts/lib/underscore-1.4.4.min.js"></script>
+    <script src="~/Scripts/js/app.js"></script>
+    <script src="~/Scripts/js/controllers/CompileSampleController.js"></script>
+    <script src="~/Scripts/lib/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+

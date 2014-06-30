@@ -181,9 +181,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CacheController.cs" />
+    <Compile Include="Controllers\CompileController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\EventRestfulController.cs" />
     <Compile Include="Controllers\EventDetailsController.cs" />
+    <Compile Include="Controllers\FilterSampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
@@ -217,9 +220,12 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\js\app.js" />
+    <Content Include="Scripts\js\controllers\CacheSampleController.js" />
+    <Content Include="Scripts\js\controllers\CompileSampleController.js" />
     <Content Include="Scripts\js\controllers\EditEventController.js" />
     <Content Include="Scripts\js\controllers\EditProfileController.js" />
     <Content Include="Scripts\js\controllers\EventController.js" />
+    <Content Include="Scripts\js\controllers\FilterSampleController.js" />
     <Content Include="Scripts\js\directives.js" />
     <Content Include="Scripts\js\filters.js" />
     <Content Include="Scripts\js\services\EventData.js" />
@@ -281,6 +287,9 @@
     <Content Include="Views\Account\Manage.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Cache\Index.cshtml" />
+    <Content Include="Views\Compile\Index.cshtml" />
+    <Content Include="Views\FilterSample\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Product\" />

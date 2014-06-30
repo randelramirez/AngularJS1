@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+    <meta charset="utf-8">
+    <title>Cache Sample</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/app.css" rel="stylesheet" />
+</head>
+<body>
+   
+    <div class="container">
+        <div ng-controller="CacheSampleController" style="padding:20px;">
+            key: <input type="text" ng-model="key" /><br />
+            value: <input type="text" ng-model="value" /><br />
+            <button type="button" class="btn" ng-click="addToCache(key,value)">Add To Cache</button>
+            <br />
+            <br />
+            <input type="text" ng-model="keyToRead" /><br />
+            <h3>Value from cache: {{readFromCache(keyToRead)}}</h3>
+            <h3>Cache Stats: {{getCacheStats()}}</h3>
+        </div>
+    </div>
+
+
+    <script src="~/Scripts/lib/jquery.min.js"></script>
+    <script src="~/Scripts/lib/angular/angular.js"></script>
+    <script src="~/Scripts/lib/angular/angular-resource.js"></script>
+    <script src="~/Scripts/lib/underscore-1.4.4.min.js"></script>
+    <script src="~/Scripts/js/app.js"></script>
+    <script src="~/Scripts/js/controllers/CacheSampleController.js"></script>
+    <script src="~/Scripts/lib/bootstrap.min.js"></script>
+
+
+</body>
+</html>
