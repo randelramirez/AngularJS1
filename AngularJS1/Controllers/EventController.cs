@@ -15,6 +15,12 @@ namespace AngularJS1.Controllers
 
         private EventContext db = new EventContext();
 
+        public ActionResult GetAll()
+        {
+            return this.Json(db.Events.Select(e => new { Id = e.Id, Name = e.Name, Date = e.Date, Location = e.Location, ImageUrl = e.ImageUrl, Time = e.Time, Sessions = e.Sessions }), JsonRequestBehavior.AllowGet);
+        }
+
+
         public ActionResult Get(int id)
         {
             // maybe e.sessions should not use .Select(e =>) if it is not being lazy loaded
@@ -37,7 +43,7 @@ namespace AngularJS1.Controllers
             //this.Response.AddHeader("sample", "x123");
             
 
-            return this.Json(db.Events.Select(e => new { Id = e.Id, Name = e.Name, Location = e.Location, ImageUrl = e.ImageUrl, Time = e.Time, Sessions = e.Sessions }).Single( e => e.Id == id), JsonRequestBehavior.AllowGet);
+            return this.Json(db.Events.Select(e => new { Id = e.Id, Name = e.Name, Date = e.Date, Location = e.Location, ImageUrl = e.ImageUrl, Time = e.Time, Sessions = e.Sessions }).Single( e => e.Id == id), JsonRequestBehavior.AllowGet);
 
             // MARS should be in the connection string for lazy loading
             // all properties are marked virtual
@@ -45,6 +51,12 @@ namespace AngularJS1.Controllers
         }
 
         public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Event eventToUpdate)
         {
             return View();
         }

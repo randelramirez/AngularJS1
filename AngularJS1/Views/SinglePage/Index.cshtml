@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+@*@Url.RouteUrl("DefaultApi", new { httproute = true, controller = "Event"})
+    @Url.HttpRouteUrl("DefaultApi", new { controller = "Event" })*@
+
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+    <meta charset="utf-8">
+    <title>Single Page AngularJS</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/app.css" rel="stylesheet" />
+
+
+</head>
+
+<body ng-cloak>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li><a href="newEvent" ng-click="createEvent()">Create Event</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <ng-view></ng-view>
+
+    <script src="~/Scripts/lib/jquery.min.js"></script>
+    <script src="~/Scripts/lib/angular/angular.js"></script>
+    <script src="~/Scripts/lib/angular/angular-resource.js"></script>
+    <script src="~/Scripts/lib/underscore-1.4.4.min.js"></script>
+    <script src="~/Scripts/singlepagejs/app.js"></script>
+    <script src="~/Scripts/singlepagejs/controllers/MainMenuController.js"></script>
+    <script src="~/Scripts/singlepagejs/controllers/EditEventController.js"></script>
+    <script src="~/Scripts/singlepagejs/controllers/EventController.js"></script>
+    <script src="~/Scripts/singlepagejs/controllers/EventListController.js"></script>
+    <script src="~/Scripts/singlepagejs/services/EventData.js"></script>
+    <script src="~/Scripts/singlepagejs/filters.js"></script>
+    <script src="~/Scripts/lib/bootstrap.min.js"></script>
+</body>
+</html>
+
+

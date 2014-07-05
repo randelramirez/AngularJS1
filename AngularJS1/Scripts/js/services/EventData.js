@@ -73,10 +73,11 @@ eventsApp.factory('eventData', function ($resource, $q) {
 
         save: function (event) {
             var deferred = $q.defer();
-            event.id = 0;
+            event.Id = 0;
             var location = window.location.origin + ":21181" + "/" + "Event/" + "Create/";
+            console.log("location",location);
             resource = $resource(location);
-
+            
             resource.save(event, function (response) {
                 deferred.resolve(response);
             }, function (response) {

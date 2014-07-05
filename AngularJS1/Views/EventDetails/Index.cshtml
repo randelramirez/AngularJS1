@@ -1,128 +1,80 @@
 ﻿@{
-    ViewBag.Title = "Index";
-}
-
-
-@*@Url.RouteUrl("DefaultApi", new { httproute = true, controller = "Event"})
-    @Url.HttpRouteUrl("DefaultApi", new { controller = "Event" })*@
-
-
-
-@{
     Layout = null;
 }
+<div ng-show="event" style="padding-left:20px; padding-right:20px">
 
-<!DOCTYPE html>
-    <html lang="en" ng-app="eventsApp">
-    <head>
-        <meta charset="utf-8">
-        <title>Event Registration</title>
-        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-        <link href="~/Content/app.css" rel="stylesheet" />
-
-      
-    </head>
-    @*I don't think this will work if you load all scripts at the end of the body*@
-    @*http://stackoverflow.com/questions/12866447/prevent-double-curly-brace-notation-from-displaying-momentarily-before-angular-j*@
-    <body ng-cloak>
-        <div class="container">
-            <div class="navbar">
-                <div class="navbar-inner">
-                    <ul class="nav">
-                        <li><a href="@Url.Action("Create","Event")">Create Event</a></li>
-                    </ul>
-
-                </div>
-            </div>
-            <div ng-show="event" ng-controller="EventController" @*ng-init="init(@ViewContext.RouteData.Values["id"])"*@  style="padding-left:20px; padding-right:20px">
-
-                <div id="me">
-                    <img data-ng-src="{{event.ImageUrl}}" alt="{{event.Name}}" />
-
-                    <div class="row">
-                        <div class="span11">
-                            <h2>
-                                {{event.Name}}
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="span3">
-                            <div><strong>Date:</strong> {{event.Date}}</div>
-                            <div><strong>Time:</strong> {{event.Time}}</div>
-                        </div>
-                        <div class="span4">
-                            <address>
-                                <strong>Address:</strong><br />
-                                {{event.Location.Address}}<br />
-                                {{event.Location.City}}, {{event.Location.Province}}
-                            </address>
-                        </div>
-
-                    </div>
-
-                    <hr />
-
-                    <h3>Sessions</h3>
-                    Order By:
-                    <select ng-model="sortorder" class="input-small">
-                        <option selected value="Name">Name</option>
-                        <option value="-UpVoteCount">Votes</option>
-                    </select>
-                    Show:
-                    <select ng-model="query.Level" class="input-medium">
-                        <option selected value="">All</option>
-                        <option value="introductory">Introductory</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="advanced">Advanced</option>
-                    </select>
-
-                    <ul class="thumbnails">
-                        <!-- query here is based on query.Level, if it was x.Level then it should use filter:x -->
-                        <li ng-repeat="session in event.Sessions | filter:query | orderBy:sortorder" class="span11">
-                            <div class="row session">
-                                <div class="span0 well votingWidget">
-                                    <div class="votingButton" ng-click="upVoteSession(session)">
-                                        <i class="icon-chevron-up icon-white"></i>
-                                    </div>
-                                    <div class="badge badge-inverse">
-                                        <div>{{session.UpVoteCount}}</div>
-                                    </div>
-                                    <div class="votingButton" ng-click="downVoteSession(session)">
-                                        <i class="icon-chevron-down"></i>
-                                    </div>
-                                </div>
-                                <div class="well span9" ng-click="navigateToDetails(event)" style=" height: 100%; overflow: hidden;">
-                                    <h4 class="well-title">{{session.Name}} <button type="button" class="btn" ng-show="allowUserToEditSession(session)" ng-click="editSession(session)" style="margin-left:10px;">Edit</button></h4>
-                                    <h6 style="margin-top:-10px;">{{session.CreatorName}}</h6>
-                                    <!-- durations => check filter.js -->
-                                    <span>Duration: {{session.Duration | durations}}</span><br />
-                                    <span>Level: {{session.Level}}</span>
-
-                                    <p>{{session.Abstract}}</p>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-
+    <div id="me">
+        <img data-ng-src="{{event.ImageUrl}}" alt="{{event.Name}}" />
+        <br />
+        <button class="btn" ng-click="reload()">Reload</button>
+        <div class="row">
+            <div class="span11">
+                <h2>
+                    {{event.Name}}
+                </h2>
             </div>
         </div>
+        <div class="row">
+            <div class="span3">
+                <div><strong>Date:</strong> {{event.Date}}</div>
+                <div><strong>Time:</strong> {{event.Time}}</div>
+            </div>
+            <div class="span4">
+                <address>
+                    <strong>Address:</strong><br />
+                    {{event.Location.Address}}<br />
+                    {{event.Location.City}}, {{event.Location.Province}}
+                </address>
+            </div>
+
+        </div>
+
+        <hr />
+
+        <h3>Sessions</h3>
+        Order By:
+        <select ng-model="sortorder" class="input-small">
+            <option selected value="Name">Name</option>
+            <option value="-UpVoteCount">Votes</option>
+        </select>
+        Show:
+        <select ng-model="query.Level" class="input-medium">
+            <option selected value="">All</option>
+            <option value="introductory">Introductory</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+        </select>
+
+        <ul class="thumbnails">
+            <!-- query here is based on query.Level, if it was x.Level then it should use filter:x -->
+            <li ng-repeat="session in event.Sessions | filter:query | orderBy:sortorder" class="span11">
+                <div class="row session">
+                    <div class="span0 well votingWidget">
+                        <div class="votingButton" ng-click="upVoteSession(session)">
+                            <i class="icon-chevron-up icon-white"></i>
+                        </div>
+                        <div class="badge badge-inverse">
+                            <div>{{session.UpVoteCount}}</div>
+                        </div>
+                        <div class="votingButton" ng-click="downVoteSession(session)">
+                            <i class="icon-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="well span9" ng-click="navigateToDetails(event)" style=" height: 100%; overflow: hidden;">
+                        <h4 class="well-title">{{session.Name}} <button type="button" class="btn" ng-show="allowUserToEditSession(session)" ng-click="editSession(session)" style="margin-left:10px;">Edit</button></h4>
+                        <h6 style="margin-top:-10px;">{{session.CreatorName}}</h6>
+                        <!-- durations => check filter.js -->
+                        <span>Duration: {{session.Duration | durations}}</span><br />
+                        <span>Level: {{session.Level}}</span>
+
+                        <p>{{session.Abstract}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
 
 
-        <script src="~/Scripts/lib/jquery.min.js"></script>
-        <script src="~/Scripts/lib/angular/angular.js"></script>
-        <script src="~/Scripts/lib/angular/angular-resource.js"></script>
-        <script src="~/Scripts/lib/underscore-1.4.4.min.js"></script>
-        <script src="~/Scripts/js/app.js"></script>
-
-        <script src="~/Scripts/js/controllers/EditEventController.js"></script>
-        <script src="~/Scripts/js/controllers/EventController.js"></script>
-        <script src="~/Scripts/js/services/EventData.js"></script>
-        <script src="~/Scripts/js/filters.js"></script>
-        <script src="~/Scripts/lib/bootstrap.min.js"></script>
-    </body>
-    </html>
 
 

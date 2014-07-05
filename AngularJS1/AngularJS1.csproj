@@ -190,6 +190,9 @@
     <Compile Include="Controllers\FilterSampleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\SinglePageController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -247,6 +250,22 @@
     <Content Include="Scripts\lib\bootstrap.min.js" />
     <Content Include="Scripts\lib\jquery.min.js" />
     <Content Include="Scripts\lib\underscore-1.4.4.min.js" />
+    <Content Include="Scripts\singlepagejs\app.js" />
+    <Content Include="Scripts\singlepagejs\controllers\CacheSampleController.js" />
+    <Content Include="Scripts\singlepagejs\controllers\CompileSampleController.js" />
+    <Content Include="Scripts\singlepagejs\controllers\CookieStoreSampleController.js" />
+    <Content Include="Scripts\singlepagejs\controllers\EditEventController.js" />
+    <Content Include="Scripts\singlepagejs\controllers\EditProfileController.js" />
+    <Content Include="Scripts\singlepagejs\controllers\EventController.js" />
+    <Content Include="Scripts\singlepagejs\controllers\EventListController.js" />
+    <Content Include="Scripts\singlepagejs\controllers\FilterSampleController.js" />
+    <Content Include="Scripts\singlepagejs\controllers\MainMenuController.js" />
+    <Content Include="Scripts\singlepagejs\directives.js" />
+    <Content Include="Scripts\singlepagejs\filters.js" />
+    <Content Include="Scripts\singlepagejs\services\EventData.js" />
+    <Content Include="Scripts\singlepagejs\services\GravatarUrlBuilder.js" />
+    <Content Include="Templates\EventList.html" />
+    <Content Include="Templates\NewEvent.html" />
     <Content Include="Views\EventDetails\Index.cshtml" />
     <Content Include="Views\Event\Create.cshtml" />
     <Content Include="Views\Profile\Edit.cshtml" />
@@ -262,6 +281,13 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Templates\EventDetails.html" />
+    <Content Include="Views\SinglePage\CreateEvent.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\SinglePage\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
