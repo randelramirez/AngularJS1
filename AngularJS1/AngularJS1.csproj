@@ -264,10 +264,12 @@
     <Content Include="Scripts\singlepagejs\directives.js" />
     <Content Include="Scripts\singlepagejs\directives\eventThumbnail.js" />
     <Content Include="Scripts\singlepagejs\directives\mySample.js" />
+    <Content Include="Scripts\singlepagejs\directives\upvote.js" />
     <Content Include="Scripts\singlepagejs\filters.js" />
     <Content Include="Scripts\singlepagejs\services\EventData.js" />
     <Content Include="Scripts\singlepagejs\services\GravatarUrlBuilder.js" />
     <Content Include="Templates\Directives\EventThumbnail.html" />
+    <Content Include="Templates\Directives\UpVote.html" />
     <Content Include="Templates\EventList.html" />
     <Content Include="Templates\NewEvent.html" />
     <Content Include="Templates\SampleDirective.html" />
