@@ -260,12 +260,14 @@
     <Content Include="Scripts\singlepagejs\controllers\EventListController.js" />
     <Content Include="Scripts\singlepagejs\controllers\FilterSampleController.js" />
     <Content Include="Scripts\singlepagejs\controllers\MainMenuController.js" />
+    <Content Include="Scripts\singlepagejs\controllers\SampleDirectiveController.js" />
     <Content Include="Scripts\singlepagejs\directives.js" />
     <Content Include="Scripts\singlepagejs\filters.js" />
     <Content Include="Scripts\singlepagejs\services\EventData.js" />
     <Content Include="Scripts\singlepagejs\services\GravatarUrlBuilder.js" />
     <Content Include="Templates\EventList.html" />
     <Content Include="Templates\NewEvent.html" />
+    <Content Include="Templates\SampleDirective.html" />
     <Content Include="Views\EventDetails\Index.cshtml" />
     <Content Include="Views\Event\Create.cshtml" />
     <Content Include="Views\Profile\Edit.cshtml" />
