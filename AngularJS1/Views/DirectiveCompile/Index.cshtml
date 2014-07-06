@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="eventsApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/app.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    Text to repeat: <input type="text" ng-model="text" />
+    <div repeat-x="5" text="{{text}}">{{text}}</div>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/lib/angular/angular.js"></script>
+    <script src="~/Scripts/lib/angular/angular-cookies.min.js"></script>
+    <script src="~/Scripts/lib/angular/angular-resource.js"></script>
+    <script src="~/Scripts/lib/underscore-1.4.4.min.js"></script>
+    <script src="~/Scripts/js/app.js"></script>
+    <script src="~/Scripts/js/filters.js"></script>
+    <script src="~/Scripts/js/directives/repeatx.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+</body>
+</html>
