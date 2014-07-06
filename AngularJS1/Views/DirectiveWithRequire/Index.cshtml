@@ -13,7 +13,12 @@
 </head>
 <body>
     <h1>Using controller from another directive</h1>
-    <greeting finnish korean />
+    @*<greeting finnish korean />*@
+    
+    <!--using transclution-->
+    <greeting ng-transclude>
+        <div finnish korean></div>
+    </greeting>
   
 
     <script src="~/Scripts/jquery-1.10.2.js"></script>
