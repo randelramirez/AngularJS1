@@ -407,7 +407,6 @@
     <Content Include="Scripts\singlepagejs\filters.js" />
     <Content Include="Scripts\singlepagejs\services\EventData.js" />
     <Content Include="Scripts\singlepagejs\services\GravatarUrlBuilder.js" />
-    <None Include="Scripts\_references.js" />
     <Content Include="Templates\Directives\EventThumbnail.html" />
     <Content Include="Templates\Directives\UpVote.html" />
     <Content Include="Templates\EditProfile.html" />
@@ -479,6 +478,7 @@
     <None Include="Project_Readme.html" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\_references.js" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
