@@ -59,14 +59,31 @@
                     </div>-->
                     <!--using directives for upvote, downvote-->
                     <upvote upvote="upVoteSession(session)" downvote="downVoteSession(session)" count="session.UpVoteCount" />
-                    <div class="well span9" ng-click="navigateToDetails(event)" style=" height: 100%; overflow: hidden;">
-                        <h4 class="well-title">{{session.Name}} <button type="button" class="btn" ng-show="allowUserToEditSession(session)" ng-click="editSession(session)" style="margin-left:10px;">Edit</button></h4>
-                        <h6 style="margin-top:-10px;">{{session.CreatorName}}</h6>
-                        <!-- durations => check filter.js -->
+                    <div class="well span9 sessionThumbnail" ng-click="navigateToDetails(event)" style=" height: 100%; overflow: hidden;">
+                        
+                        <!--<h4 class="well-title">{{session.Name}} <button type="button" class="btn" ng-show="allowUserToEditSession(session)" ng-click="editSession(session)" style="margin-left:10px;">Edit</button></h4>
+                              <h6 style="margin-top:-10px;">{{session.CreatorName}}</h6>
+                        
+                        check filter.js for durations
                         <span>Duration: {{session.Duration | durations}}</span><br />
                         <span>Level: {{session.Level}}</span>
 
-                        <p>{{session.Abstract}}</p>
+                        <p>{{session.Abstract}}</p>    
+                            
+                        -->
+
+                        <!--using a directive with transclusion for the h4 above-->
+                        <collapsible title="{{session.Name}}">
+                            <h6 style="margin-top:-10px;">{{session.CreatorName}}</h6>
+
+                            <span>Duration: {{session.Duration | durations}}</span><br />
+                            <span>Level: {{session.Level}}</span>
+
+                            <p>{{session.Abstract}}</p>   
+                        </collapsible>
+                        
+                        
+                      
                     </div>
                 </div>
             </li>

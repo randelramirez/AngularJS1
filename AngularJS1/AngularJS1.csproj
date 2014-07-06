@@ -266,6 +266,7 @@
     <Content Include="Scripts\singlepagejs\controllers\MainMenuController.js" />
     <Content Include="Scripts\singlepagejs\controllers\SampleDirectiveController.js" />
     <Content Include="Scripts\singlepagejs\directives.js" />
+    <Content Include="Scripts\singlepagejs\directives\collapsible.js" />
     <Content Include="Scripts\singlepagejs\directives\datakeys.js" />
     <Content Include="Scripts\singlepagejs\directives\eventThumbnail.js" />
     <Content Include="Scripts\singlepagejs\directives\gravatar.js" />
