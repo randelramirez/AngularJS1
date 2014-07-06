@@ -30,6 +30,7 @@
                 <ul class="nav">
                     <li><a href="newEvent" ng-click="createEvent()">Create Event</a></li>
                     <li><a href="sampleDirective">Sample Directive</a></li>
+                    <li><a href="editProfile">Edit Profile</a></li>
                 </ul>
             </div>
         </div>
@@ -41,17 +42,29 @@
     <script src="~/Scripts/lib/angular/angular.js"></script>
     <script src="~/Scripts/lib/angular/angular-resource.js"></script>
     <script src="~/Scripts/lib/underscore-1.4.4.min.js"></script>
+
     <script src="~/Scripts/singlepagejs/app.js"></script>
+
     <script src="~/Scripts/singlepagejs/directives.js"></script>
     <script src="~/Scripts/singlepagejs/directives/eventThumbnail.js"></script>
     <script src="~/Scripts/singlepagejs/directives/upvote.js"></script>
+    <script src="~/Scripts/singlepagejs/directives/gravatar.js"></script>
+    <script src="~/Scripts/singlepagejs/directives/datakeys.js"></script>
+
+    <script src="~/Scripts/singlepagejs/services/EventData.js"></script>
+    <script src="~/Scripts/singlepagejs/services/GravatarUrlBuilder.js"></script>
+    <script src="~/Scripts/singlepagejs/filters.js"></script>
+
     <script src="~/Scripts/singlepagejs/controllers/MainMenuController.js"></script>
     <script src="~/Scripts/singlepagejs/controllers/EditEventController.js"></script>
+    <script src="~/Scripts/singlepagejs/controllers/EditProfileController.js"></script>
     <script src="~/Scripts/singlepagejs/controllers/EventController.js"></script>
     <script src="~/Scripts/singlepagejs/controllers/EventListController.js"></script>
     <script src="~/Scripts/singlepagejs/controllers/SampleDirectiveController.js"></script>
-    <script src="~/Scripts/singlepagejs/services/EventData.js"></script>
-    <script src="~/Scripts/singlepagejs/filters.js"></script>
+ 
+
+
+
     <script src="~/Scripts/lib/bootstrap.min.js"></script>
 </body>
 </html>

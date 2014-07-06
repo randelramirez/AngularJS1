@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="eventsApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/app.css" rel="stylesheet" />
+</head>
+<body>
+    @*Both cannot be used at the same in this page - randel, need to check why*@
+    @*<greeting />
+    <greeting-with-external-controller />*@
+    <greeting-with-dynamic-controller ctrl="GreetingDynamicController"/>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/lib/angular/angular.js"></script>
+    <script src="~/Scripts/lib/angular/angular-cookies.js"></script>
+    <script src="~/Scripts/lib/angular/angular-resource.js"></script>
+    <script src="~/Scripts/lib/underscore-1.4.4.min.js"></script>
+    <script src="~/Scripts/js/app.js"></script>
+    <script src="~/Scripts/js/directives/greeting.js"></script>
+    <script src="~/Scripts/js/filters.js"></script>
+    <script src="~/Scripts/lib/bootstrap.min.js"></script>
+</body>
+</html>
